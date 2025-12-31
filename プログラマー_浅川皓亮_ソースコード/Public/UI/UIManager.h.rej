@@ -1,0 +1,26 @@
+diff a/Carry/Source/Carry/Public/UI/UIManager.h b/Carry/Source/Carry/Public/UI/UIManager.h	(rejected hunks)
+@@ -1,7 +1,7 @@
+ #pragma once
+ 
+ #include "CoreMinimal.h"
+-#include "GameFramework/HUD.h"
++#include "Blueprint/UserWidget.h"
+ #include "Blueprint/UserWidget.h"  // UUserWidget をインクルード
+ #include "Containers/Map.h"
+ #include "UIManager.generated.h"
+@@ -27,13 +27,12 @@
+  *
+  */
+ UCLASS()
+-class CARRY_API AUIManager : public AHUD
++class CARRY_API UUIManager : public UObject
+ {
+     GENERATED_BODY()
+ 
+-protected:
+-    virtual void BeginPlay() override;
+ public:
++     void Init();
+     // 特定の名前に対応するステート用のウィジェットを表示
+     UFUNCTION(BlueprintCallable)
+     void ShowWidget(FName DataName, FName WidgetName);
